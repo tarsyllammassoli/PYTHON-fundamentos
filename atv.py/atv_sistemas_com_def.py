@@ -218,12 +218,62 @@ def mostrar_categorias(categorias):
 
 mostrar_categorias(categorias)
 
-theproduto = ("Notebook", 3500, 8)
+theproduto = ("Notebook", 3500, 8) # tupla (!!!)
 
 def mostrar_produto(theproduto):
-    nome, preco, estoque = theproduto
+    nome, preco, estoque = theproduto # Desempacotando e dando nome
     print('Nome: ', nome)
     print('Preço: ', preco)
     print('Estoque: ', estoque)
 
 mostrar_produto(theproduto)
+
+def obter_informacoes(theproduto):
+    nome, preco, estoque = theproduto # Desempacota... normal
+    return nome, preco 
+
+nome, preco = obter_informacoes(theproduto) # A tupla precisa ser desempacotada de novo fora do DEF
+
+print(nome)
+print(preco)
+
+notas = [
+    ("Ana", 8),
+    ("Carlos", 5),
+    ("Julia", 9),
+    ("Pedro", 6),
+    ("Marina", 7)
+]
+
+def analisar_notas(notas): # refazer atividade... (!)
+    soma = 0
+
+    for aluno in notas:
+        nome, nota = aluno
+        soma += nota
+
+    media_notas_alunos = soma / len(notas)
+
+    return media_notas_alunos
+
+media = analisar_notas(notas)
+print(f'Média: {media}')
+
+produtos_p = [
+    ("Teclado", 150),
+    ("Mouse", 80),
+    ("Monitor", 900),
+    ("Headset", 250),
+    ("Webcam", 180)
+]
+
+def produtos_caros(produtos_p):
+    lista = []
+    for i in produtos_p:
+        nome, preco = i
+        if preco > 200:
+            lista.append(nome)
+    return lista
+
+lista_perifericos = produtos_caros(produtos_p)
+print(f'Maior de 200R$: ', lista_perifericos)
