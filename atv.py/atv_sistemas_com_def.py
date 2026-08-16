@@ -277,3 +277,17 @@ def produtos_caros(produtos_p):
 
 lista_perifericos = produtos_caros(produtos_p)
 print(f'Maior de 200R$: ', lista_perifericos)
+
+# ---------------------------------------- testando
+
+senhas = ("python123", "abc456", "senha789")
+
+def verificar_senha():
+    tentativa = input("Digite sua senha: ")
+
+    if tentativa in senhas:
+        print("Acesso Permitido!")
+    else:
+        print(f"Acesso Negado.")
+    
+verificar_senha()
